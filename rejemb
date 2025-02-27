@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Username Display</title>
+    
+</head>
+<body>
 
+    <div class="container">
+        <h2>My Telegram Username</h2>
+        <input type="text" id="telegramInput" readonly>
+        <button onclick="copyUsername()">Copy Username</button>
+    </div>
+
+    <script>
+        document.getElementById("telegramInput").value = "@Rejemb"; // Replace with your username
+
+        function copyUsername() {
+            let inputField = document.getElementById("telegramInput");
+            inputField.select();
+            inputField.setSelectionRange(0, 99999); // For mobile devices
+            navigator.clipboard.writeText(inputField.value);
+            alert("Copied: " + inputField.value);
+        }
+    </script>
